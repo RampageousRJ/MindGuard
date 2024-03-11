@@ -1,6 +1,8 @@
-import { generateError } from "../utils/customErrorGenerator"
+import { fetchDepressionArticles } from "../scrapers/depression_scraper.js"
+import { generateError } from "../utils/customErrorGenerator.js"
 
-export const depressionHandler = (req, res, next) => {
+export const depressionHandler = async(req, res, next) => {
+    await fetchDepressionArticles()
     res.json({
         success: true,
         message: "Api Working !!s"
@@ -8,5 +10,9 @@ export const depressionHandler = (req, res, next) => {
 }
 
 export const anxietyHandler = (req, res, next) => {
-    return next(generateError(404, "Not Found Love !!"))
+    try{
+        return next(generateError(401, "Not Found Love !!"))
+    }
+    catch (error){
+    }
 }

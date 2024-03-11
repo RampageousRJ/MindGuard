@@ -4,7 +4,13 @@ import cookieParser from 'cookie-parser'
 
 export const app = express()
 
-// Error handling  middleware should be at the top of all other middlewares
+app.use(cookieParser())
+app.use(express.json())
+
+// Handle Routes
+app.use("/api/v1/article", articleroutes)
+
+// Error handling  middleware should be after all routes
 app.use((err, req, res, next) => {
     const errorMessage = err.message || 'Internal Server Error'
     const errorCode = err.statusCode || 500
@@ -12,15 +18,9 @@ app.use((err, req, res, next) => {
         .status(errorCode)
         .json({
             success: false,
-            errorMessage
+            message: errorMessage
         })
 })
-
-app.use(cookieParser())
-app.use("/api/v1/article", articleroutes)
-
-
-
 
 app.listen(3000, () => {
     console.log("Server is listening at port 3000");
