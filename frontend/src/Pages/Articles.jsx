@@ -1,6 +1,46 @@
 import { FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import { FaSearchengin } from "react-icons/fa6";
 import React, { useState } from 'react'
+import Article from '../Components/Article/Article';
+
+const articles = [
+    {
+        _id: 1,
+        title: "Title 1",
+        overview: "Overview 1 is great to have and to love",
+        img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
+    },
+    {
+        _id: 2,
+        title: "Title 2",
+        overview: "Overview 2 is great to have and not to love",
+        img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
+    },
+    {
+        _id: 3,
+        title: "Title 3",
+        overview: "Overview 3 is great to have and to love",
+        img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
+    },
+    {
+        _id: 4,
+        title: "Title 4",
+        overview: "Overview 4 is great to have and not to love",
+        img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
+    },
+    {
+        _id: 5,
+        title: "Title 5",
+        overview: "Overview 5 is great to have and not to love",
+        img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
+    },
+    {
+        _id: 6,
+        title: "Title 6",
+        overview: "Overview 6 is great to have and to love",
+        img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
+    },
+]
 
 function Articles() {
 
@@ -57,8 +97,15 @@ function Articles() {
                     </Select>
                 </FormControl>
             </section>
-            <main className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-
+            <main className='w-full grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 place-items-center p-3'>
+                {
+                    articles.map((article) => (
+                        <Article
+                            key={article._id}
+                            article={article}
+                        />
+                    ))
+                }
             </main>
         </div >
     )
