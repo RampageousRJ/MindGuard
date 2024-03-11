@@ -2,38 +2,39 @@
     position: relative;
     color: white;
     background-size: cover;
-    padding: 7rem 0 0;
+    height: 350px;
+    width: 350px;
     border-radius: 0.5rem;
     overflow: hidden;
     transition: transform 500ms ease;
+    text-align: center;
+}
+
+.card:hover,
+.card:focus {
+    transform: scale(1.03)
 }
 
 .card-content {
     position: absolute;
-    /* Add this */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /* Ensure it covers the entire .card */
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
     padding: 1.5rem;
     background-color: #0692e3c2;
     transition: opacity 500ms linear, transform 500ms ease-in-out;
-    /* Combine transitions */
     transform: translateY(100%);
-    /* Default state off-screen */
     opacity: 0;
-    /* Default state invisible */
 }
 
 .card:hover .card-content,
 .card:focus-within .card-content {
     opacity: 1;
     transform: translateY(0%);
-    /* Move into view */
     transition-delay: 500ms;
-    /* Adjust based on desired effect */
 }

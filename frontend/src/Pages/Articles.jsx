@@ -7,37 +7,37 @@ const articles = [
     {
         _id: 1,
         title: "Title 1",
-        overview: "Overview 1 is great to have and to love",
+        overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis, rerum, voluptatibus perferendis non, magni quisquam iste dolores eaque ipsa iure nemo. Suscipit nisi quidem neque adipisci ipsum, at culpa?",
         img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
     },
     {
         _id: 2,
         title: "Title 2",
-        overview: "Overview 2 is great to have and not to love",
+        overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis, rerum, voluptatibus perferendis non, magni quisquam iste dolores eaque ipsa iure nemo. Suscipit nisi quidem neque adipisci ipsum, at culpa?",
         img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
     },
     {
         _id: 3,
         title: "Title 3",
-        overview: "Overview 3 is great to have and to love",
+        overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis, rerum, voluptatibus perferendis non, magni quisquam iste dolores eaque ipsa iure nemo. Suscipit nisi quidem neque adipisci ipsum, at culpa?",
         img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
     },
     {
         _id: 4,
         title: "Title 4",
-        overview: "Overview 4 is great to have and not to love",
+        overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis, rerum, voluptatibus perferendis non, magni quisquam iste dolores eaque ipsa iure nemo. Suscipit nisi quidem neque adipisci ipsum, at culpa?",
         img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
     },
     {
         _id: 5,
         title: "Title 5",
-        overview: "Overview 5 is great to have and not to love",
+        overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis, rerum, voluptatibus perferendis non, magni quisquam iste dolores eaque ipsa iure nemo. Suscipit nisi quidem neque adipisci ipsum, at culpa?",
         img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
     },
     {
         _id: 6,
         title: "Title 6",
-        overview: "Overview 6 is great to have and to love",
+        overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis, rerum, voluptatibus perferendis non, magni quisquam iste dolores eaque ipsa iure nemo. Suscipit nisi quidem neque adipisci ipsum, at culpa?",
         img: "https://www.shutterstock.com/shutterstock/photos/300112205/display_1500/stock-vector-mental-health-disorders-and-work-related-stress-anxiety-and-depression-symptoms-icons-set-abstract-300112205.jpg"
     },
 ]
@@ -55,45 +55,70 @@ function Articles() {
     }
 
     return (
-        <div className='flex flex-col gap-6'>
-            <section className='flex flex-col items-center gap-4 md:flex-row md:justify-between p-4'>
+        <div className='flex flex-col gap-6' id='articles'>
+            <section className='flex w-full mx-auto lg:w-2/3 flex-col items-center gap-4 md:flex-row md:justify-between p-6 bg-gray-100 rounded-lg shadow'>
                 <TextField
                     placeholder='Search articles...'
                     variant='outlined'
                     id='search-bar'
                     InputProps={{
                         endAdornment: (
-                            < InputAdornment position="end" >
-                                <FaSearchengin
-                                    className='cursor-pointer text-lg'
-                                    onClick={handleSearch}
-                                />
+                            <InputAdornment position="end">
+                                <FaSearchengin className='cursor-pointer text-lg' />
                             </InputAdornment>
                         )
-                    }
-                    }
+                    }}
                     sx={{
-                        width: "50%",
-                        border: "2px solid transparent",
-                        borderRadius: "1.9rem"
+                        width: "100%", // Adjust based on the layout
+                        md: { width: "50%" }, // Responsive adjustments
+                        border: "1px solid transparent",
+                        borderRadius: "1.9rem",
+                        backgroundColor: "white",
+                        "&:hover": {
+                            backgroundColor: "white",
+                            borderColor: "primary.main",
+                        },
+                        "&.Mui-focused": {
+                            backgroundColor: "white",
+                            borderColor: "primary.main",
+                        },
+                        "& .MuiOutlinedInput-root": {
+                            borderRadius: "1.9rem",
+                        },
                     }}
                 />
                 <FormControl
                     sx={{
-                        width: "25%"
+                        width: "100%", // Full width on mobile
+                        md: { width: "25%" }, // Adjust on larger screens
+                        backgroundColor: "white",
+                        border: "1px solid transparent",
+                        borderRadius: "1.9rem",
+                        "&:hover": {
+                            backgroundColor: "white",
+                            borderColor: "primary.main",
+                        },
+                        "&.Mui-focused": {
+                            backgroundColor: "white",
+                            borderColor: "primary.main",
+                        },
+                        "& .MuiOutlinedInput-root": {
+                            borderRadius: "1.9rem",
+                        },
                     }}
                 >
-                    <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Category</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         value={age}
-                        label="Age"
+                        label="Category"
                         onChange={handleChange}
+                        variant="outlined"
                     >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value={"Depression"}>Depression</MenuItem>
+                        <MenuItem value={"Stress"}>Stress</MenuItem>
+                        <MenuItem value={"Anxiety"}>Anxiety</MenuItem>
                     </Select>
                 </FormControl>
             </section>
