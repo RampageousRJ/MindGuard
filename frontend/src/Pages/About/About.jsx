@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import svg from '../../assets/main_svg.svg'
 import { animate, motion } from 'framer-motion'
 import './about.css'
+import { useNavigate } from 'react-router-dom'
 
 function About() {
 
   const finalTitle = 'Gaurd'
   const [visibleTitle, setVisibleTitle] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     let currIndex = 0;
@@ -31,6 +33,11 @@ function About() {
     return () => clearInterval(expandContract);
   }, [])
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    navigate("/articles")
+  }
+
   return (
     <main className='min-h-screen flex flex-col-reverse gap-6 md:flex-row items-center md:justify-around'>
       <article className='flex flex-col gap-4 w-2/3 md:w-1/2'>
@@ -42,7 +49,10 @@ function About() {
         >
           <p className='text-sm md:text-lg space-x-0 roboto-regular-italic'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis possimus tempore quo, itaque voluptatum doloremque. Distinctio at sapiente sint facilis alias maiores. Harum, quia quis!</p>
         </motion.p>
-        <button className='btn '>
+        <button
+          className='btn '
+          onClick={handleSubmit}
+        >
           Get Articles
         </button>
       </article>
