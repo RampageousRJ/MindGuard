@@ -132,7 +132,7 @@ function Dass() {
                     >
                         Help?
                     </strong>
-                    <h3 className='text-4xl '>Question {questions[currIndex]._id}</h3>
+                    <h3 className='text-4xl '>Question {questions[currIndex]._id+1}</h3>
                     <p className='text-xl roboto-regular-italic'>
                         <motion.p
                             initial={{ opacity: 0, x: -100 }}

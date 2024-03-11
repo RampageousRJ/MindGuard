@@ -8,6 +8,7 @@ import SignIn from './Pages/SignIn'
 import Footer from './Components/Footer'
 import Articles from './Pages/Articles'
 import Dass from './Pages/Dass'
+import Community from './Pages/Community'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/articles' element={<Articles />} />
         <Route path='/dass' element={<Dass />} />
+        <Route path='/community' element={<Community />} />
       </Routes>
       <Footer />
     </Router >
