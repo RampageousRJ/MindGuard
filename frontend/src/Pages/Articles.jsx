@@ -1,7 +1,8 @@
-import { FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material'
+import { FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField, duration } from '@mui/material'
 import { FaSearchengin } from "react-icons/fa6";
 import React, { useState } from 'react'
 import Article from '../Components/Article/Article';
+import { motion } from 'framer-motion';
 
 const articles = [
     {
@@ -125,10 +126,16 @@ function Articles() {
             <main className='w-full grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 place-items-center p-3'>
                 {
                     articles.map((article) => (
-                        <Article
-                            key={article._id}
-                            article={article}
-                        />
+                        <motion.div
+                            initial={{ opacity: 0, rotate: -180 }}
+                            animate={{ opacity: 1, rotate: 0 }}
+                            transition={{ duration: 0.3, delay: article._id * 0.5 + 0.5 }}
+                        >
+                            <Article
+                                key={article._id}
+                                article={article}
+                            />
+                        </motion.div>
                     ))
                 }
             </main>
