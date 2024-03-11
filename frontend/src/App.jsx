@@ -7,6 +7,7 @@ import SignUp from './Pages/SignUp'
 import SignIn from './Pages/SignIn'
 import Footer from './Components/Footer'
 import Articles from './Pages/Articles'
+import Dass from './Pages/Dass'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/articles' element={<Articles />} />
+        <Route path='/dass' element={<Dass />} />
       </Routes>
       <Footer />
     </Router >
