@@ -15,8 +15,8 @@ function SignIn() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .5 }}
         >
-            <main className='min-h-screen flex justify-center items-center  '>
-                <form action="" className='flex flex-col gap-8 min-w-96 text-lg md:text-xl shadow-xl px-8 py-14 text-center rounded-lg'>
+            <main className='min-h-screen flex justify-center items-center  ' >
+                <form action="" className='flex flex-col gap-8 min-w-96 text-lg md:text-xl shadow-xl px-8 py-14 text-center rounded-lg' >
                     <h1 className='text-xl md:text-4xl roboto-bold text-blue-400'>Login</h1>
                     <TextField
                         id='username'
@@ -40,6 +40,8 @@ function SignIn() {
                         onClick={handleSubmit}
                         variant='contained'
                         color='primary'
+                        sx={{
+                        }}
                     >
                         Sign In
                     </Button>

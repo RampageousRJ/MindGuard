@@ -46,6 +46,7 @@ function SignUp() {
                         variant='outlined'
                         color='primary'
                         sx={{
+                    
                             width: "100%"
                         }}
                     />
@@ -53,6 +54,7 @@ function SignUp() {
                         onClick={handleSubmit}
                         variant='contained'
                         color='primary'
+                        
                     >
                         Register
                     </Button>

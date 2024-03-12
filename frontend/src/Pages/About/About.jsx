@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 function About() {
 
-  const finalTitle = 'Gaurd'
+  const finalTitle = 'Guard'
   const [visibleTitle, setVisibleTitle] = useState('')
   const navigate = useNavigate()
 
@@ -15,7 +15,6 @@ function About() {
     let expanding = true;
     const expandContract = setInterval(() => {
       if (expanding) {
-        console.log("Hello", currIndex);
         currIndex++
         setVisibleTitle(finalTitle.slice(0, currIndex))
         if (currIndex === finalTitle.length)
@@ -66,6 +65,7 @@ function About() {
             src={svg}
             alt="Main SVG"
             className='bg-cover bg-center'
+
           />
         </section>
       </motion.section>
